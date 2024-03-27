@@ -1,0 +1,16 @@
+import numpy as np
+
+def shattering_coefficient(dim_hypothesis_space):
+    return 2**dim_hypothesis_space
+
+def can_shatter(points, dim_hypothesis_space):
+    num_points = len(points)
+    if num_points > shattering_coefficient(dim_hypothesis_space):
+        return False
+    return True
+
+dim_hypothesis_space = 3  
+points_to_shatter = [(0, 1), (2, 3), (4, 5)]  
+
+can_be_shattered = can_shatter(points_to_shatter, dim_hypothesis_space)
+print("Can the points be shattered by the hypothesis space?", can_be_shattered)
